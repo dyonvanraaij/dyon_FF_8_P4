@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <form onchange="addActivityItem()">
+        <label for="svgFormatting">SVG Format</label>
+        <select name="svgFormatting" id="svgFormatting">
+            <option disabled selected value="">Choose</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="circle">Circle</option>
+            <option value="elipse">Elipse</option>
+            <option value="line">Line</option>
+            <option value="polygon">Polygon</option>
+            <option value="polyline">Polyline</option>
+        </select>
+        <br><br>
+        <div id="inputSVG"></div>
+        <input type="submit" value="submit">
+    </form>
+
+    <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
