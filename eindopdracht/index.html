@@ -4,25 +4,43 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <!-- including bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-    <form onchange="addActivityItem()">
-        <label for="svgFormatting">SVG Format</label>
-        <select name="svgFormatting" id="svgFormatting">
-            <option disabled selected value="">Choose</option>
-            <option value="rectangle">Rectangle</option>
-            <option value="circle">Circle</option>
-            <option value="elipse">Elipse</option>
-            <option value="line">Line</option>
-            <option value="polygon">Polygon</option>
-            <option value="polyline">Polyline</option>
-        </select>
-        <br><br>
-        <div id="inputSVG"></div>
-        <input type="submit" value="submit">
-    </form>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                <form onchange="addActivityItem()" id="AJAXform">
+                    <div class="form-group">
+                        <label for="svgFormatting">SVG Format</label>
+                        <select name="svgFormatting" id="svgFormatting" class="form-control" required>
+                            <option disabled selected value="">Choose</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="circle">Circle</option>
+                            <option value="ellipse">Ellipse</option>
+                            <option value="line">Line</option>
+                            <option value="polygon">Polygon</option>
+                            <option value="polyline">Polyline</option>
+                        </select>
+                    </div>
+                    <div id="inputSVG"></div>
+                    <input type="submit" value="submit" onclick="loadDoc(); drawFunction()" class="btn btn-primary">
 
+                </form>
+            </div>
+
+            <div class="col-6">
+                <svg height="500" Width="500" id="drawSVG" class="border border-dark"></svg>
+            </div>
+        </div>
+        <a onclick="saveToServer()" class="btn btn-primary">Opslaan</a>
+        <a onclick="saveSVGtoFile()" class="btn btn-primary">Download</a>
+
+    </div>
+
+    <!-- Including Javascript file -->
     <script src="main.js" charset="utf-8"></script>
 </body>
 
